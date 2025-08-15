@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "invi"
+version = "2.0.0"
+
+requires-python = ">= 3.11"
+dependencies = ["numpy==2.2.0", #Numerical differences when using Galpy and TorusMapper
+                "cvxopt", #Required by Agama
+                "asdf",
+                "dustmaps",
+                "gaiadr3-zeropoint",
+                "pandas",
+                "shapely",
+                "gaiaunlimited",
+                "scikit-learn",
+                "pygaia",
+                "mpl_point_clicker",
+                "tqdm",
+                "joblib",
+                "termcolor",
+                "six", #Required by dustmaps
+                ]
+
+#Galpy requires GNU Scientific Library (GSL) development package: apt install libgsl-dev
+
+#Additional python dependencies (Install with: 'python3.11 -m pip install .' within the main folders.):
+#Agama (https://github.com/GalacticDynamics-Oxford/Agama)
+#Galpy including TorusMapper (https://github.com/jobovy/galpy)
+
+#Dustmaps and gaiaunlimited require a manual copy of the files stored in data/
+
+#Install to plot with latex symbols in matplotlib: 'apt install cm-super'
+
+#Install to use dynamical swap (required to load large data-files): 'apt install swapspace'
+
+authors = [{name="Carles Garcia Palau", email="cgpalau@sjtu.edu.cn"}]
+
+description = "Inverse Time Integration Method (invi)"
+
+readme = "README.md"
+
+license = {file = "LICENSE.txt"}
+
+keywords = ["astrophysics", "galactic dynamics"]
+
+classifiers = ["Intended Audience :: Science/Research",
+               "Topic :: Scientific/Engineering :: Astronomy",
+               "Topic :: Scientific/Engineering :: Physics",
+               "License :: OSI Approved :: MIT License",
+               "Programming Language :: Python :: 3.13",
+               "Operating System :: POSIX :: Linux"]
